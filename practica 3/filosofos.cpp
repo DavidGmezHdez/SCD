@@ -50,7 +50,6 @@ void funcion_filosofos( int id )
 
   while ( true )
   {
-   if(id==0){
     cout <<"Filósofo " <<id << " solicita ten. izq." <<id_ten_izq <<endl;
     // ... solicitar tenedor izquierdo
     MPI_Ssend(&valor,1,MPI_INT,id_ten_izq,1,MPI_COMM_WORLD);
@@ -58,9 +57,7 @@ void funcion_filosofos( int id )
     cout <<"Filósofo " <<id <<" solicita ten. der." <<id_ten_der <<endl;
     // ... solicitar tenedor derecho
     MPI_Ssend(&valor,1,MPI_INT,id_ten_der,1,MPI_COMM_WORLD);
-   }
-   else
-   {
+
       cout <<"Filósofo " <<id << " solicita ten. der." <<id_ten_izq <<endl;
     // ... solicitar tenedor derecho
     MPI_Ssend(&valor,1,MPI_INT,id_ten_der,1,MPI_COMM_WORLD);
@@ -68,7 +65,7 @@ void funcion_filosofos( int id )
     cout <<"Filósofo " <<id <<" solicita ten. izq." <<id_ten_der <<endl;
     // ... solicitar tenedor izquierdo
     MPI_Ssend(&valor,1,MPI_INT,id_ten_izq,1,MPI_COMM_WORLD);
-   }
+    
     cout <<"Filósofo " <<id <<" comienza a comer" <<endl ;
     sleep_for( milliseconds( aleatorio<10,100>() ) );
 

@@ -59,7 +59,6 @@ void funcion_filosofos( int id )
 
   while ( true )
   {
-   if(id==0)
    // ... solicitar sentarse
    cout<<"Filosofo "<<id<<" solicita sentarse"<<endl;
    MPI_Ssend(&valor,1,MPI_INT,id_camarero,2,MPI_COMM_WORLD);
